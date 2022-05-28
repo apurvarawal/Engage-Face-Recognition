@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf">
+        <link rel="icon" size="5px" href="favicon.ico">
+        <script src="https://cdn.tailwindcss.com/"></script>
+        <title>
+            Student login
+        </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="loginbody">
+        <div class="collegename">
+            <header class="h-76 mx-11 grid grid-cols-3 px-8 gap-4 content-center backdrop-blur-sm bg-white/30 ">
+                <img class="object-cover  h-48 w-96" src="institute logo.png" alt="institute logo">
+                <p class="text-black text-left my-11  text-4xl font-serif"><span
+                        class=" inline-block align-middle">INSTITUTE OF APPLIED SCIENCES</span></p>
+            </header>
+        </div> <br><br>
+        
+        
+        <div class="logininfo">
+            <p class="studentlogin">STUDENT'S LOGIN</p>
+            <img class="displaypic" src="display picture.png" alt="display picture">
+            <form>      
+                <input class="takeinput " type="email" name="EmailID" placeholder="Email ID">
+                <div class="emailError ml-20 text-sm"></div><br>
+                <input class="takeinput " type="password" name="password" placeholder="Password">
+                <div class="passwordError ml-20 text-sm"></div><br>
+                <!-- <input class="signinbutton  bg-lime-500 w-24 " type="button" value="Signin"> -->
+                <button class="signinbutton  bg-lime-500 w-24" type="submit">Login</button>
+                
+            </form>
+            <a href="/signup">
+                <input class="signupbutton bg-red-400 w-24" type="button" value="Signup">  
+            </a>
+        </div>
+
+        <script>
+            const form = document.querySelector('form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                document.querySelector('.emailError').textContent = '';
+                document.querySelector('.passwordError').textContent = '';
+                const email = form.EmailID.value;
+                const password = form.password.value;
+                console.log(email, password);
+                // try {
+                    const fReq = fetch('/login', { 
+                    method: 'POST', 
+                    body: JSON.stringify({ email, password }),
+                    headers: {'Content-Type': 'application/json'}
+                    })
+                    .then(async (res)=>{
+                        const data = await res.json();
+                        if(data.errors){
+                            document.querySelector('.emailError').textContent = data.errors.email;
+                            document.querySelector('.passwordError').textContent = data.errors.password;
+                        }
+                        if(data.user){
+                            location.assign('/profile');
+                        }
+                    })
+                    .catch((err)=>{
+                        console.log("error")
+                    })
+            })
+        </script>
+    </body>
+</html>

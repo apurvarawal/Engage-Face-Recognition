@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" size="5px" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fjalla+One&family=Libre+Bodoni&family=Ms+Madi&family=Niconne&family=Sacramento&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="signupbody">
+    
+    <div>
+        <div class="collegename">
+            <header class="h-76 mx-11 grid grid-cols-3 px-8 gap-4 content-center backdrop-blur-sm bg-white/30 ">
+                <img class="object-cover  h-48 w-96" src="institute logo.png" alt="institute logo">
+                <p class="text-black text-left my-11  text-4xl font-serif"><span
+                        class=" inline-block align-middle">INSTITUTE OF APPLIED SCIENCES</span></p>
+            </header>
+        </div>
+
+        <div class="signuppage ">
+
+            <form class="signupinfo">
+                <div class="grid grid-cols-2 gap-2">
+                    <label>Name :</label>
+                    <input class="takeinput-signup" type="text" name="name"><br>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <label>Email ID :</label>
+                    <input class="takeinput-signup" type="email" name="EmailID"><br>
+                    <div class="text-sm emailError"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <label>Enrollment No. :</label>
+                    <input class="takeinput-signup" type="number" name="EnrollmentNo"><br>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <label>Gender :</label>
+                    <select name="gender" id="">
+                        <option value="none" selected disabled hidden>Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select><br>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label>Father's/Mother's Name :</label>
+                    </div>
+                    <div>
+                        <select name="parentTitle" id="" class="w-28">
+                            <option value="none" selected disabled hidden>Select</option>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                        </select>
+                        <input class="takeinput-signup" type="text" name="parentName"><br>
+                    </div><br>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <label>Official Email ID :</label>
+                    <input class="takeinput-signup" type="email" name="OfficialEmailID"><br>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <label>Phone no. :</label>
+                    <input class="takeinput-signup" type="Phone" name="PhoneNumber" ><br>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <label>Set Password :</label>
+                    <input class="takeinput-signup" type="password" name="password">
+                    <div class="text-sm passwordError"></div>
+                    <br>
+                </div>
+
+                <button class="signinbutton bg-lime-500 w-24" type="submit">Submit</button>
+            </form>
+            
+            <a href="/login">
+                <input class="signupbutton bg-red-400 w-24" type="button" value="Login">  
+            </a>
+        </div>
+    </div>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.querySelector('.emailError').textContent = '';
+            document.querySelector('.passwordError').textContent = '';
+            const email = form.EmailID.value;
+            const password = form.password.value;
+            const officialEmail = form.OfficialEmailID.value;
+            const name = form.name.value;
+            const EnrollmentNo = form.EnrollmentNo.value;
+            const PhoneNumber = form.PhoneNumber.value;
+            const parentTitle = form.parentTitle.value;
+            const gender = form.gender.value;
+            const parentName = form.parentName.value;
+
+            console.log(email, password, officialEmail, EnrollmentNo, name, PhoneNumber, parentTitle, gender, parentName);
+                const fReq = fetch('/signup', { 
+                method: 'POST', 
+                body: JSON.stringify({ email, password, officialEmail, EnrollmentNo, name, PhoneNumber, parentTitle, gender, parentName }),
+                headers: {'Content-Type': 'application/json'}
+                })
+                .then(async (res)=>{
+                    const data = await res.json();
+                    console.log(res);
+                    if(data.errors){
+                        document.querySelector('.emailError').textContent = data.errors.email;
+                        document.querySelector('.passwordError').textContent = data.errors.password;
+                        if(data.errors.password){
+                            alert("Minimum password length must pe greater than 6 characters")
+                        }
+                        if(data.errors.email){
+                            alert(`${data.errors.email}`)
+                        }
+                    }
+                    console.log(data.user);
+                    if(data.user){
+                        location.assign('/profilepic');
+                    }
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+        })
+    </script>
+</body>
+
+</html>

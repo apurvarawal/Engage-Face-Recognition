@@ -1,0 +1,68 @@
+
+<div class="w-72 h-full bg-slate-100 flex flex-col justify-between pt-20">
+    <div>
+        <div class="flex flex-row justify-center items-center pt-4">
+            <div><img src="<%= user.profilePic %>" alt="" width="50" height="50" class="rounded-full"></div>
+            <div class="text-xl font-bold ml-4"><%= user.name %></div>
+        </div>
+        <div class="p-4 align-center bg-lime-800 mt-5 text-white">
+            <i class="bi bi-speedometer mr-4"></i>
+            Dashboard
+        </div>
+        <div class="flex flex-col items-center">
+            <a href="/profile" class="w-full">
+                <div class="bg-slate-100 w-full p-4 flex flex-row justify-between hover:bg-lime-800 hover:text-white">
+                    <div>
+                        <i class="fa-solid fa-user"></i>
+                        <div class="ml-4 inline">
+                            Profile
+                        </div>
+                    </div>
+                    <div>
+                        <i class="bi bi-caret-right-fill"></i>
+                    </div>
+                </div>
+            </a>
+            <a href="/schedule" class="w-full">
+                <div class="bg-slate-100 w-full p-4 flex flex-row justify-between hover:bg-lime-800 hover:text-white">
+                    <div>
+                        <i class="bi bi-calendar-check"></i>
+                        <div class="ml-4 inline">
+                            Schedule
+                        </div>
+                    </div>
+                    <div>
+                        <i class="bi bi-caret-right-fill"></i>
+                    </div>
+                </div>
+            </a>
+            <a href="/profilepic" class="w-full">
+                <div class="bg-slate-100 w-full p-4 flex flex-row justify-between hover:bg-lime-800 hover:text-white">
+                    <div>
+                        <i class="bi bi-image"></i>
+                        <div class="ml-4 inline">
+                            Change Profile Picture
+                        </div>
+                    </div>
+                    <div>
+                        <i class="bi bi-caret-right-fill"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div>
+        <a href="/logout" class="w-full">
+            <div class="bg-slate-100 w-full p-4 flex flex-row justify-between hover:bg-rose-800 hover:text-white">
+                <div class="ml-5">
+                    <div class="ml-4 inline">
+                        Logout
+                    </div>
+                </div>
+                <div class="flex place-self-end">
+                    <i class="bi bi-box-arrow-right"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

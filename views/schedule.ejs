@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="https://kit.fontawesome.com/1d1456b5fb.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fjalla+One&family=Libre+Bodoni&family=Ms+Madi&family=Niconne&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <title>Schedule</title>
+</head>
+<body class="m-0 p-0 h-screen bg-lime-800">
+    <div id="myDIV" class="h-screen fixed left-0 top-0" style="display: none;">
+        <%- include('partials/sidebar') %>
+    </div>
+    <div class="fixed top-0 left-0 right-0">
+        <%- include('partials/header') %>
+    </div>
+    
+
+
+
+    <div class="m-0 h-screen b-20 flex justify-center mt-24 w-full">
+        <div class="pt-10 m-0 h-5/6 w-7/12 bg-slate-100 rounded-lg flex flex-col items-center pb-5 overflow-scroll">
+            <div class="relative">
+                <h1 class="font-bold text-3xl pb-5 ">Schedule:</h1>
+            </div>
+            <div class="w-5/6 rounded-md bg-slate-100 text-black p-4 flex flex-col border-2 border-lime-800 mb-2">
+                <div class="pb-3">
+                    <Span class="basis-1/4 font-bold text-xl">Subject:</Span>
+                    <span>Computer Science</span>
+                </div>
+                <div class="pb-3">
+                    <Span class="basis-1/4 font-bold text-xl">Subject Code:</Span>
+                    <Span>CS101</Span>
+                </div>
+                <div class="pb-3 flex flex-row justify-between">
+                    <span>
+                        <span class="basis-1/4 font-bold text-xl">Class Time:</span>
+                        <span>9:00 - 10:00</span>
+                    </span>
+                    <span><button class="bg-lime-800 rounded-md text-white p-2 hover:bg-lime-700" onclick="location.assign('/attendance')">Proceed to Join</button></span>
+                </div>
+            </div>
+            <div class="w-5/6 rounded-md bg-slate-100 text-black p-4 flex flex-col border-2 border-lime-800 mb-2">
+                <div class="pb-3">
+                    <Span class="basis-1/4 font-bold text-xl">Subject:</Span>
+                    <span>Computer Science</span>
+                </div>
+                <div class="pb-3">
+                    <Span class="basis-1/4 font-bold text-xl">Subject Code:</Span>
+                    <Span>CS101</Span>
+                </div>
+                <div class="pb-3 flex flex-row justify-between">
+                    <span>
+                        <span class="basis-1/4 font-bold text-xl">Class Time:</span>
+                        <span>9:00 - 10:00</span>
+                    </span>
+                    <span><button class="bg-lime-800 rounded-md text-white p-2 hover:bg-lime-700" onclick="location.assign('/attendance')">Proceed to Join</button></span>
+                </div>
+            </div>
+            <div class="w-5/6 rounded-md bg-slate-100 text-black p-4 flex flex-col border-2 border-lime-800 mb-2">
+                <div class="pb-3">
+                    <Span class="basis-1/4 font-bold text-xl">Subject:</Span>
+                    <span>Computer Science</span>
+                </div>
+                <div class="pb-3">
+                    <Span class="basis-1/4 font-bold text-xl">Subject Code:</Span>
+                    <Span>CS101</Span>
+                </div>
+                <div class="pb-3 flex flex-row justify-between">
+                    <span>
+                        <span class="basis-1/4 font-bold text-xl">Class Time:</span>
+                        <span>9:00 - 10:00</span>
+                    </span>
+                    <span><button class="bg-lime-800 rounded-md text-white p-2 hover:bg-lime-700" onclick="location.assign('/attendance')">Proceed to Join</button></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // console.log(window.location.pathname)
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

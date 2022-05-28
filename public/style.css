@@ -1,0 +1,153 @@
+/*.......LOGIN PAGE.......*/
+
+a {
+    text-decoration: none;
+}
+
+.loginbody {
+    position: relative;
+    margin: auto;
+    /*margin-left: 39%;
+    margin-top: 10%;*/
+    background-image: url(new\ background.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+}
+
+
+.displaypic{
+    height: 120px;
+    margin: auto;
+    /*margin-left: 33%;
+    margin-top: 0px;*/
+    margin-bottom: 6%;
+}
+
+.logininfo {
+    width: 350px;
+    padding: 10px;
+    height: 450px;
+    border: none;
+    border-radius: 75px;
+    background-color: bisque;
+    border-style: ridge;
+    opacity: 85%;
+    margin: auto;
+
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: chocolate;
+    font-size: 30px;
+    margin-left: 15%;
+}
+
+
+.signinbutton {
+    background-color: greenyellow;
+    color: green;
+    border: none;
+    display: block;
+    height: 40px;
+    line-height: 2;
+    margin: auto;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    font-size: medium;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.signinbutton:hover {
+    background-color: rgb(9, 92, 9);
+    color: whitesmoke;
+    border-color: rgb(9, 92, 9);
+
+}
+
+.signupbutton {
+    background-color: rgb(243, 91, 91);
+    color: rgb(128, 4, 0);
+    border: none;
+    display: block;
+    height: 40px;
+    margin: auto;
+    border-radius: 10px;
+    font-size: medium;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.signupbutton:hover {
+    background-color: rgb(109, 13, 13);
+    color: whitesmoke;
+    border-color: rgb(109, 13, 13);
+
+}
+
+.studentlogin{
+    text-align: center;
+}
+
+.takeinput {
+    color: rgb(18, 14, 14);
+    position: relative;
+    margin-left: 23%;
+    height: 30px;
+    border: none;
+    background-color: coral;
+    border-radius: 25px;
+    /*padding-left: 2px;*/
+    text-align: left;
+
+}
+
+.takeinput:hover {
+    background-color: burlywood;
+}
+
+
+
+/* .........SIGNUP PAGE......... */
+
+.signupbody {
+    position: relative;
+    margin-top: 0px;
+    background-image: url(new\ background.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+}
+
+.signuppage {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    /*padding: 10px;*/
+    height: 100%;
+    border: none;
+    border-radius: 75px;
+    background-color: bisque;
+    border-style: ridge;
+    opacity: 85%;
+}
+
+.signupinfo {
+    font-family: 'Libre Bodoni', serif;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 130%;
+}
+
+.collegename {
+    height: 70%;
+    padding: 10px;
+    margin-left: auto;
+}
+
+/*.imageheader{
+    padding: none;
+    height: 300px;
+    margin-left: 60px;
+    margin-bottom: 0px;
+}

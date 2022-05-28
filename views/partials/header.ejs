@@ -1,0 +1,20 @@
+<div class="bg-slate-100 items-center flex justify-between">
+        <div>
+            <button onclick="myFunction()" class="ml-5">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        <div>
+            <img src="instituteLogo.png" alt="" width="120" height="6" class="inline">
+            <span class="text-black text-left text-3xl font-serif m-4">INSTITUTE OF APPLIED SCIENCES</span>
+        </div>
+        <div class="inline h-16">
+            <% if(user){ %>
+                <button onclick="location.assign('/profile')" class="h-full w-30 rounded-bl-md pl-5 pr-5 font-bold"><%= user.name %></button>
+                <button class="h-full w-30 p-4" onclick="location.assign('/logout')"><i class="bi bi-box-arrow-right"></i></button>
+            <% } else { %>
+                <button class="bg-rose-400 h-full w-20 rounded-bl-md pl-5 pr-5">Login</button>
+                <button class="bg-rose-400 h-full w-20">SignUp</button>
+            <% } %>
+        </div>
+</div>

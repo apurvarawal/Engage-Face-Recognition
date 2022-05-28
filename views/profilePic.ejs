@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="https://kit.fontawesome.com/1d1456b5fb.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Profile Picture</title>
+</head>
+<body class="h-screen bg-lime-800">
+    <div id="myDIV" class="h-screen fixed left-0 top-0" style="display: none;">
+        <%- include('partials/sidebar') %>
+    </div>
+    <div class="fixed top-0 left-0 right-0">
+        <%- include('partials/header') %>
+    </div>
+    <%- include('partials/header') %>
+    <div class="flex flex-col justify-center items-center h-4/5">
+        <div class="flex flex-col justify-center items-center h-4/5 border-4 border-lime-800 w-1/4 rounded-lg bg-slate-200">
+            <div class="h-40 w-40 rounded-full bg-slate-300">
+                <img id="profileImage" src="display picture.png" alt="">
+            </div>
+            <form class="flex flex-col items-center" id="imageForm">
+                <div class="mb-7 font-bold"><%= user.email %></div>
+                <div>
+                    <label class="">Upload Profile Pic :</label><br>
+                </div>
+                <div class="flex flex-col items-center">
+                    <input id="imageInput" class="takeinput-signup ml-10" type="file" accept="image/*" name="profile"><br>
+                    <div class="text-sm profilePicError"></div>
+                    <button class="bg-lime-500 w-40 rounded-md p-2 m-0" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="profilePicStatic.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
