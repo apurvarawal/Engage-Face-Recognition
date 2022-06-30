@@ -35,10 +35,6 @@ mongoose.connect(mongodbUri, {
 .catch(error => console.log(error))
 
 app.use(checkCurrentUser);
-// app.use((req, res, next) => {
-//     res.locals.user = "aditya jangir"
-//     next();
-// })
 
 app.get('/attendance', Authenticate,(req, res) => {
     res.render('attandence-conf')
